@@ -59,3 +59,79 @@ The serverless model means:
 
 ## 📂 Project Structure
 
+/ProcessTaskFn
+├── ProcessTask.cs # Azure Function triggered by Event Grid
+├── Program.cs # Function host configuration
+├── local.settings.json # Local dev settings (excluded from repo)
+└── ...other .NET isolated function files
+
+## 🔧 Deployment Steps
+
+### **1. Create the Function App**
+Used Azure Portal → Function App  
+Runtime: **.NET 8 Isolated**  
+Region: West Europe  
+Plan: Consumption  
+
+### **2. Add required configuration**
+Inside Function App → Configuration:
+
+AzureWebJobsStorage = <storage-connection-string>
+
+shell
+Copy code
+
+### **3. Publish the Function (from local)**
+func azure functionapp publish <your-function-app-name>
+
+yaml
+Copy code
+
+### **4. Create Event Grid Subscription**
+Source: Blob Storage  
+Event: Blob Created  
+Endpoint Type: Azure Function  
+Function: `ProcessTask`
+
+---
+
+## 📡 How to Test
+
+1. Go to your Storage Account  
+2. Create container (e.g., `input`)  
+3. Upload any file  
+4. Go to Azure Function → ProcessTask → **Monitor**  
+5. You will see successful invocation logs  
+
+---
+
+## 📝 Example Log Output
+
+Executed 'ProcessTask' (Succeeded)
+Event Type: Microsoft.Storage.BlobCreated
+Blob: /input/example.jpg
+
+---
+
+## 💼 About This Project
+
+This repository is part of my Azure cloud engineering learning and demonstrates my ability to:
+
+- Design event-driven serverless systems  
+- Configure Event Grid system topics & subscriptions  
+- Deploy Azure Functions using Core Tools  
+- Work with Azure Storage, triggers, and bindings  
+- Build production-style cloud automation  
+
+Feel free to explore the code or reach out if you'd like to discuss Azure or serverless architectures!
+
+---
+
+## 📫 Contact
+
+**Himesh Parmar**  
+GitHub: https://github.com/himeshpar  
+LinkedIn: https://www.linkedin.com/in/himesh-parmar-4067a9124/
+
+
+
