@@ -1,12 +1,14 @@
 # Azure Event-Driven Function Pipeline  
 ### Blob Storage → Event Grid → Azure Functions (.NET 8 Isolated)
 
-This project demonstrates a fully serverless, event-driven workflow built in Microsoft Azure.  
+This project demonstrates a real-world, event-driven serverless workflow in Azure, using Blob Storage, Event Grid, and Azure Functions (.NET 8 Isolated) to automatically process uploaded files in real time.
 It integrates **Blob Storage**, **Event Grid**, and an **Azure Function** to automatically process files the moment they are uploaded.
 
 ---
 
 ## 🚀 Architecture Overview
+
+Blob Uploaded → Event Grid Detects Event → Azure Function Executes → Logs / Processing Output
 
 1. A file is uploaded into **Azure Blob Storage**
 2. **Azure Event Grid** detects the `BlobCreated` event
@@ -123,6 +125,16 @@ This repository is part of my Azure cloud engineering learning and demonstrates 
 - Work with Azure Storage, triggers, and bindings  
 - Build production-style cloud automation  
 
+## 🧠 Skills Demonstrated
+
+- Azure Functions (C#, .NET 8 Isolated)
+- Event-driven architecture
+- Blob Storage event integration
+- Event Grid subscriptions & system topics
+- Deployment using Azure Functions Core Tools
+- Cloud automation & serverless design
+- Azure configuration & monitoring
+
 Feel free to explore the code or reach out if you'd like to discuss Azure or serverless architectures!
 
 ---
@@ -132,6 +144,3 @@ Feel free to explore the code or reach out if you'd like to discuss Azure or ser
 **Himesh Parmar**  
 GitHub: https://github.com/himeshpar  
 LinkedIn: https://www.linkedin.com/in/himesh-parmar-4067a9124/
-
-
-
