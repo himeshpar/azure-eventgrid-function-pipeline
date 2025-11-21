@@ -80,14 +80,10 @@ Inside Function App → Configuration:
 
 AzureWebJobsStorage = <storage-connection-string>
 
-shell
-Copy code
 
 ### **3. Publish the Function (from local)**
 func azure functionapp publish <your-function-app-name>
 
-yaml
-Copy code
 
 ### **4. Create Event Grid Subscription**
 Source: Blob Storage  
